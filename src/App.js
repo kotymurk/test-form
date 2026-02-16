@@ -1,4 +1,4 @@
-import CreateUserForm from './CreateUserForm';
+import CreateUserForm from './components/CreateUserForm';
 import illustration from './components/illustration.svg';
 import './App.css';
 
@@ -13,7 +13,6 @@ export default function App() {
           <img src={illustration} alt='shop' />
         </div>
         <div className='right'>
-          <h2>Create account</h2>
           <CreateUserForm />
         </div>
       </div>

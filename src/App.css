@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
   margin: 0;
   font-family: Raleway;
@@ -26,11 +27,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 40px;
+}
+
+.left {
+  flex: 1;
+  max-width: 691px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .left img {
-  max-width: 691px;
   width: 100%;
+  height: auto;
+  object-fit: contain;
+   position: relative;
+  z-index: 10;
 }
 
 .right {
@@ -40,29 +53,5 @@ body {
   border: 1px solid #71c322;
   box-shadow: 0 15px 10px rgba(0, 0, 0, 0.25);
   width: 460px;
-}
-
-h2 {
-  text-align: center;
-  font-weight: 300;
-  font-size: 48px;
-  color: #999a1c;
-  margin-top: 0;
-}
-
-label {
-  display: block;
-  margin: 8px;
-  font-size: 24px;
-  font-weight: 300;
-}
-
-input {
-  padding: 10px 18px 9px;
-  font-size: 18px;
-  font-weight: 100;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-top: 8px;
-  background: #fbfbfb;
+  margin-left: -60px;
 }
