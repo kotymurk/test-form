@@ -18,13 +18,33 @@ export default function CreateUserForm() {
 
   const onSubmit = async (data) => {
     setSubmitStatus(null);
+
+    const trimmedData = {
+      name: data.name?.trim(),
+      username: data.username?.trim(),
+      email: data.email?.trim(),
+      phone: data.phone?.trim(),
+      address: {
+        street: data.address?.street.trim() || '',
+        suite: data.address?.suite.trim(),
+        city: data.address?.city.trim(),
+        zipcode: data.address?.zipcode.trim(),
+      },
+      website: data.website?.trim() || null,
+      company: {
+        name: data.company?.name.trim() || null,
+        catchPhrase: data.company?.catchPhrase.trim() || null,
+        bs: data.company?.bs.trim() || null,
+      },
+    };
+
     try {
       const response = await fetch(
         'https://jsonplaceholder.typicode.com/users',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
+          body: JSON.stringify(trimmedData),
         },
       );
 
